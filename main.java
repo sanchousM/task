@@ -17,8 +17,8 @@ public class main {
     public static void main(String[] args) throws IOException {
         String csvFilePath = "foreign_names.csv";
         Character separator = ';';
-        int nextDivisionld = 1;
-        Map<String, Integer> divisionaIds = new HashMap<>();
+        int nextDivisionId = 1;
+        Map<String, division> divisionaIds = new HashMap<>();
         main staff = new main();
         try (InputStream in = main.class.getClassLoader().getResourceAsStream(csvFilePath);
              CSVReader reader = in == null ? null : new CSVReader(new InputStreamReader(in), separator)) {
@@ -29,9 +29,9 @@ public class main {
             nextLine = reader.readNext();
             while ((nextLine = reader.readNext()) != null) {
                 if (!divisionaIds.containsKey(nextLine[4])) {
-                    divisionaIds.put(nextLine[4], nextDivisionld);
-                    division div = new division(nextLine[4], nextDivisionld);
-                    nextDivisionld++;
+                    division div= new division(nextLine[4],nextDivisionId);
+                    divisionaIds.put(nextLine[4], div);
+                    nextDivisionId++;
                 }
                 person p = new person(nextLine, divisionaIds.get(nextLine[4]));
                 staff.list.add(p);
