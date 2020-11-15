@@ -33,7 +33,7 @@ public class main {
                     division div = new division(nextLine[4], nextDivisionld);
                     nextDivisionld++;
                 }
-                person p = new person(nextLine, divisionaIds.get(nextLine[4],nextDivisionld));
+                person p = new person(nextLine, divisionaIds.get(nextLine[4]));
                 staff.list.add(p);
             }
         }
