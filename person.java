@@ -1,5 +1,4 @@
 package groupid;
-import java.io.IOException;
 
 public class person {
         private String id;
@@ -15,7 +14,6 @@ public class person {
         gender=staff[2];
         BirtDate=staff[3];
         div= division;
-       // div= new division(staff[4],Integer.parseInt(staff[5]));
         salary=staff[5];
 
     }
